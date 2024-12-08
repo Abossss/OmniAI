@@ -1,6 +1,6 @@
-# 🌟 <span style="color: #3498db;">OmniAI</span>  
-
 <div align="center">  
+
+# 🌟 <span style="color: #3498db;">OmniAI</span>  
 
 [简体中文](README_CN.md) / 繁體中文 / [English](README.md) / [Deutsch](README_DE.md) / [日本語](README_JP.md)
 
