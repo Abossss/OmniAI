@@ -1,0 +1,247 @@
+/* 通用样式，重置默认边距、内边距，并设置盒模型 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* body 样式，设置整体页面的基本属性 */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f7fb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    color: #333;
+    padding: 0 10px;
+}
+
+/* 聊天容器样式，设置尺寸、背景、阴影等外观及布局相关属性 */
+.chat-container {
+    width: 100%;
+    max-width: 900px;
+    height: 80vh;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    margin-top: 50px;
+}
+
+/* 聊天头部样式，设置背景色、文字样式及顶部圆角 */
+.chat-header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+/* 聊天框样式，设置可滚动、背景、间距等属性，同时作为.upload-btn 的定位上下文 */
+.chat-box {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 20px;
+    background-color: #f7f9fc;
+    border-bottom: 2px solid #e1e1e1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: relative;
+    transition: background 0.3s ease;
+}
+
+/* 输入框区域样式，设置布局、背景及边框等 */
+.input-section {
+    display: flex;
+    padding: 15px;
+    background-color: #fff;
+    justify-content: space-between;
+    border-top: 2px solid #e1e1e1;
+}
+
+/* 用户输入框样式，设置尺寸、边框、背景等外观及交互相关的焦点效果 */
+#user-input {
+    flex-grow: 1;
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 25px;
+    font-size: 16px;
+    outline: none;
+    background-color: #f8f8f8;
+    transition: all 0.3s ease;
+    resize: none;
+    overflow-y: hidden;
+}
+
+#user-input:focus {
+    border-color: #4CAF50;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.4);
+}
+
+/* 发送按钮样式，设置尺寸、背景、交互效果等 */
+#send-btn {
+    padding: 12px 18px;
+    margin-left: 15px;
+    background: linear-gradient(135deg, #4CAF50, #81C784);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#send-btn:hover {
+    background: linear-gradient(135deg, #66bb6a, #388e3c);
+    transform: translateY(-2px);
+}
+
+#send-btn:active {
+    transform: translateY(0);
+}
+
+/* 消息样式，设置基本外观及通用的动画效果 */
+.message {
+    padding: 12px;
+    border-radius: 15px;
+    max-width: 70%;
+    font-size: 16px;
+    line-height: 1.5;
+    word-wrap: break-word;
+    display: inline-block;
+    animation: slideIn 0.5s ease-out;
+    transition: background-color 0.3s ease;
+}
+
+/* 用户发送的消息样式，设置背景色、对齐方式及阴影等 */
+.message.user {
+    background-color: #d1f7d1;
+    align-self: flex-end;
+    border-top-left-radius: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 机器人回复的消息样式，设置背景色、对齐方式及阴影等 */
+.message.bot {
+    background-color: #e1f3fe;
+    align-self: flex-start;
+    border-top-right-radius: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 加载提示样式 */
+#loading-message {
+    font-size: 14px;
+    color: #888;
+    font-style: italic;
+}
+
+.loading-text {
+    font-size: 14px;
+    color: #888;
+    font-style: italic;
+}
+
+/* 简约页脚样式，设置背景、文字颜色、对齐方式等 */
+footer {
+    width: 100%;
+    background-color: #fff;
+    color: #888;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 14px;
+    border-top: 1px solid #e1e1e1;
+    margin-top: auto;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* 联系方式部分样式，设置链接颜色及交互效果 */
+.contact-info {
+    margin-top: 10px;
+}
+
+.contact-link {
+    color: #4CAF50;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+}
+
+.contact-link:hover {
+    text-decoration: underline;
+}
+
+/* 动画效果定义 */
+@keyframes slideIn {
+    0% {
+        transform: translateX(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* 文件输入框隐藏 */
+#file-input {
+    display: none;
+}
+
+/* 上传按钮所在容器样式，通过绝对定位将其放置在.chat-box 左下角 */
+.upload-btn {
+    position:fixed;
+    top: 680px;
+    left: 380px;
+}
+
+/* 上传按钮样式，设置尺寸、背景、交互效果等 */
+#upload-btn {
+    padding: 8px 14px;
+    margin-left: 8px;
+    background: linear-gradient(135deg, #FF5733, #FF8A65);
+    color: white;
+    border: none;
+    border-radius: 18px;
+    cursor: pointer;
+    font-size: 14px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#upload-btn:hover {
+    background: linear-gradient(135deg, #FF7043, #FF5252);
+    transform: translateY(-2px);
+}
+
+#upload-btn:active {
+    transform: translateY(0);
+}
+
+/* 上传成功提示框样式，设置定位、背景、显示隐藏等属性 */
+.upload-success {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 128, 0, 0.8);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: none;
+    font-size: 16px;
+}

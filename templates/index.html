@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OmniAI</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+  <div class="chat-container">
+    <div class="chat-header">
+      <h2>OmniAI</h2>
+    </div>
+    <div id="chat-box" class="chat-box">
+      <!-- 消息会动态插入到这里 -->
+      <div class="upload-btn">
+        <!-- 上传文件按钮直接放在chat-box内部，左下角 -->
+        <input type="file" id="file-input">
+        <button id="upload-btn" style="--clr: #FF5733;">上传文件</button>
+      </div>
+    </div>
+    <div class="input-section">
+      <input type="text" id="user-input" placeholder="输入你的问题..." autocomplete="off" />
+      <button id="send-btn" style="--clr: #4CAF50;"><span>发送</span></button>
+    </div>
+  </div>
+
+  <!-- 上传成功提示框 -->
+  <div id="upload-success" class="upload-success">
+    文件上传成功！
+  </div>
+
+  <footer>
+    <p>&copy; 2024 OmniAI. All rights reserved.</p>
+    <p>Day Day No Bug</p>
+    <div class="contact-info">
+      <a href="https://github.com/Abossss" target="_blank" class="contact-link">GitHub</a> |
+      <a href="https://space.bilibili.com/495265645" target="_blank" class="contact-link">B站</a> |
+      <a href="https://qm.qq.com/q/laPiwEI1FK" target="_blank" class="contact-link">QQ</a> |
+      <a href="https://weixin.qq.com/r/your-wechat" target="_blank" class="contact-link">微信</a>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+
+</html>
